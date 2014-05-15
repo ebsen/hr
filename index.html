@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf8">
+  <title>For Niki :)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font: 36px Georgia, serif;
+      text-align: center;
+    }
+    hr {
+      border: 8px solid pink;
+    }
+    .primary-color {
+      border-color: blue;
+    }
+    .secondary-color {
+      border-color: yellow;
+    }
+    .tourettes {
+      border-color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <hr class="end">
+  uggg!
+  <hr class="flashy primary-color">
+  horizontal
+  <hr class="flashy secondary-color">
+  rules
+  <hr class="flashy primary-color">
+  :(
+  <hr class="end">
+
+  <script charset="utf-8">
+    var sdstateRulez = document.getElementsByClassName( 'flashy' )
+    var outerRulez = document.getElementsByClassName( 'end' )
+
+    function swapColors () {
+      for (var i = 0; i < sdstateRulez.length; i++) {
+        var el = sdstateRulez[i]
+        if (el.classList.contains( 'primary-color' )) {
+          el.classList.remove( 'primary-color' )
+          el.classList.add( 'secondary-color' )
+        } else {
+          el.classList.remove( 'secondary-color' )
+          el.classList.add( 'primary-color' )
+        }
+      }
+    }
+
+    function tourettes () {
+      for (var i = 0; i < outerRulez.length; i++) {
+        var el = outerRulez[i]
+        // console.log( '!' )
+        if (el.classList.contains( 'tourettes' )) {
+          el.classList.remove( 'tourettes' )
+        } else {
+          el.classList.add( 'tourettes' )
+        }
+      }
+    }
+
+    setInterval( swapColors, 500 )
+    setInterval( tourettes, 250 )
+  </script>
+
+</body>
